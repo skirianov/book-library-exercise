@@ -35,36 +35,31 @@
             </div>
             <div class="card-btm">
                 <div class="login">
-                    <button class="login-btn" type="submit">Log In</button>
-                </div>
-                <div class="login">
                     <button class="login-btn">Sign In</button>
                 </div>
+                
             </div>
         </form>
         </div>
     </main>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-firestore.js"></script>
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+      
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="/__/firebase/8.1.2/firebase-app.js"></script>
+      
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <script src="/__/firebase/8.1.2/firebase-analytics.js"></script>
+      
+        <!-- Add Firebase products that you want to use -->
+        <script src="/__/firebase/8.1.2/firebase-auth.js"></script>
+        <script src="/__/firebase/8.1.2/firebase-firestore.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
+  <!-- Previously loaded Firebase SDKs -->
 
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
 <script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyAckcvVmwgvtrV30Cb_NpPXVTFyvaW5Igo",
-    authDomain: "libtrack-5215d.firebaseapp.com",
-    projectId: "libtrack-5215d",
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
 
   // make auth and db ref
 
@@ -73,7 +68,7 @@
 
   // update sets
 
-  db.setting( {timeStampsInSnapshots: true} );
+  db.settings( {timeStampsInSnapshots: true} );
   
 </script>
     <script src="app.js"></script>

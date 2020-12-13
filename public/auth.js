@@ -8,5 +8,8 @@ formEmailPassword.addEventListener('submit',(e) => {
 
     auth.createUserWithEmailAndPassword(email, password).then(cred => {
         console.log(cred);
-    })
+    });
+
+    formEmailPassword["email"].value = '';
+    formEmailPassword["password"].value = '';
 })
