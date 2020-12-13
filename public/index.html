@@ -5,7 +5,8 @@
     <title>Book lib</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
 </head>
 
 <body>
@@ -22,16 +23,21 @@
             <div class="card-body">
                 <div class="input">
                     <p>E-mail</p>   
-                    <input type="text" placeholder="E-mail">
+                    <input type="text" placeholder="E-mail" class="large">
+                    <input type="text" class="small">
                 </div>
                 <div class="input">
                     <p>Password</p>
-                    <input type="text" placeholder="Password">
+                    <input type="text" placeholder="Password" class="large">
+                    <input type="text" class="small">
                 </div>
             </div>
             <div class="card-btm">
                 <div class="login">
-                    <button class="login-btn">Log in</button>
+                    <button class="login-btn">Log In</button>
+                </div>
+                <div class="login">
+                    <button class="login-btn">Sign In</button>
                 </div>
                 <div class="login">
                     <div id="my-signin2"></div>
@@ -53,7 +59,6 @@
     <script src="/__/firebase/init.js"></script>
 
     <script src="app.js"></script>
-    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 
 </body>
 
