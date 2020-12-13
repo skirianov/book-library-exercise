@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Book lib</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
+   
+</head>
+
+<body>
+    <header>
+        <div class="welcome">
+            <h1>WELCOME TO LIBTRACK</h1>
+        </div>
+        <div class="intro">
+            <h3>Please login to access you personal book track</h3>
+        </div>
+    </header>
+    <main>
+        <div class="card">
+            
+            <form id ="signin-form">
+            <div class="card-body">
+                <div class="input">
+                    <p>E-mail</p>   
+                    <input type="text" placeholder="E-mail" class="large" id ="email">
+                    <input type="text" class="small">
+                </div>
+                <div class="input">
+                    <p>Password</p>
+                    <input type="text" placeholder="Password" class="large" id="password">
+                    <input type="text" class="small">
+                </div>
+            </div>
+            <div class="card-btm">
+                <div class="login">
+                    <button class="login-btn" type="submit">Log In</button>
+                </div>
+                <div class="login">
+                    <button class="login-btn">Sign In</button>
+                </div>
+            </div>
+        </form>
+        </div>
+    </main>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyAckcvVmwgvtrV30Cb_NpPXVTFyvaW5Igo",
+    authDomain: "libtrack-5215d.firebaseapp.com",
+    projectId: "libtrack-5215d",
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  // make auth and db ref
+
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+  // update sets
+
+  db.setting( {timeStampsInSnapshots: true} );
+  
+</script>
+    <script src="app.js"></script>
+    <script src="auth.js"></script>
+
+</body>
+
+</html>
