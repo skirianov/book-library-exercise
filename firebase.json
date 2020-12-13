@@ -1,4 +1,5 @@
 {
+  "rulesFile": "database.rules.json",
   "hosting": {
     "public": "public",
     "ignore": [
@@ -6,5 +7,8 @@
       "**/.*",
       "**/node_modules/**"
     ]
+  },
+  "remoteconfig": {
+    "template": "remoteconfig.template.json"
   }
 }
