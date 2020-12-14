@@ -5,10 +5,11 @@
     <title>Book lib</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
-   
+
 </head>
 
 <body>
+<div class="page">
     <header>
         <div class="welcome">
             <h1>WELCOME TO LIBTRACK</h1>
@@ -19,58 +20,73 @@
     </header>
     <main>
         <div class="card">
-            
-            <form id ="signin-form">
-            <div class="card-body">
-                <div class="input">
-                    <p>E-mail</p>   
-                    <input type="text" placeholder="E-mail" class="large" id ="email">
-                    <input type="text" class="small">
+
+            <form id="signin-form">
+                <div class="card-body">
+                    <div class="input">
+                        <p>E-mail</p>
+                        <input type="email" placeholder="E-mail" class="large" id="email">
+                        <input type="text" class="small">
+                    </div>
+                    <div class="input">
+                        <p>Password</p>
+                        <input type="password" placeholder="Password" class="large" id="password">
+                        <input type="text" class="small">
+                    </div>
                 </div>
-                <div class="input">
-                    <p>Password</p>
-                    <input type="text" placeholder="Password" class="large" id="password">
-                    <input type="text" class="small">
+                <div class="card-btm">
+                    <div class="login">
+                        <button class="login-btn" id="signin">Sign In</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="login">
+                <button class="login-btn" id="login">Log In</button>
+            </div>
+        </div>
+</div>
+        <!-- modal for loging-in loading-->
+        <div id="modal">
+            <div class="modal-content">
+                <div class="modal-text">
+                    <p>Please wait, we are loggin in ...</p>
+                </div>
+                <div class="loading">
+                    <img class="loading-gif" src="imgs/load.gif">
                 </div>
             </div>
-            <div class="card-btm">
-                <div class="login">
-                    <button class="login-btn">Sign In</button>
-                </div>
-                
-            </div>
-        </form>
         </div>
     </main>
 
-        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-      
-        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-        <script src="/__/firebase/8.1.2/firebase-app.js"></script>
-      
-        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-        <script src="/__/firebase/8.1.2/firebase-analytics.js"></script>
-      
-        <!-- Add Firebase products that you want to use -->
-        <script src="/__/firebase/8.1.2/firebase-auth.js"></script>
-        <script src="/__/firebase/8.1.2/firebase-firestore.js"></script>
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
-  <!-- Previously loaded Firebase SDKs -->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="/__/firebase/8.1.2/firebase-app.js"></script>
 
-<!-- Initialize Firebase -->
-<script src="/__/firebase/init.js"></script>
-<script>
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="/__/firebase/8.1.2/firebase-analytics.js"></script>
 
-  // make auth and db ref
+    <!-- Add Firebase products that you want to use -->
+    <script src="/__/firebase/8.1.2/firebase-auth.js"></script>
+    <script src="/__/firebase/8.1.2/firebase-firestore.js"></script>
 
-  const auth = firebase.auth();
-  const db = firebase.firestore();
+    <!-- Previously loaded Firebase SDKs -->
 
-  // update sets
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+    <script>
 
-  db.settings( {timeStampsInSnapshots: true} );
-  
-</script>
+        // make auth and db ref
+
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        // update sets
+
+        db.settings({ timeStampsInSnapshots: true });
+
+    </script>
     <script src="app.js"></script>
     <script src="auth.js"></script>
 

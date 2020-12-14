@@ -1,3 +1,19 @@
+const modal = document.querySelector('#modal');
+const page = document.querySelector('.page');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const Book = function(title, author, pages, read){
     this.title = title;
     this.author = author;
@@ -11,3 +27,4 @@ const Book = function(title, author, pages, read){
 const theHobbit = new Book('The hobbit','Tolkien',295,'not read yet');
 
 console.log(theHobbit.info());
+
