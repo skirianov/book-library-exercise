@@ -21,33 +21,31 @@
     <main>
         <div class="card">
 
-            <form id="signin-form">
+            <form id="login-form">
                 <div class="card-body">
                     <div class="input">
                         <p>E-mail</p>
                         <input type="email" placeholder="E-mail" class="large" id="email">
-                        <input type="text" class="small">
                     </div>
                     <div class="input">
                         <p>Password</p>
                         <input type="password" placeholder="Password" class="large" id="password">
-                        <input type="text" class="small">
                     </div>
                 </div>
                 <div class="card-btm">
                     <div class="login">
-                        <button class="login-btn" id="signin">Sign In</button>
+                        <button class="login-btn" id="login">Log In</button>
                     </div>
                 </div>
             </form>
 
             <div class="login">
-                <button class="login-btn" id="login">Log In</button>
+                <button class="login-btn" id="sign-in-btn">Sign In</button>
             </div>
         </div>
 </div>
         <!-- modal for loging-in loading-->
-        <div id="modal">
+        <div id="modal-login">
             <div class="modal-content">
                 <div class="modal-text">
                     <p>Please wait, we are loggin in ...</p>
@@ -55,6 +53,35 @@
                 <div class="loading">
                     <img class="loading-gif" src="imgs/load.gif">
                 </div>
+            </div>
+        </div>
+        <div id="modal-signin">
+            <div id="background">
+                
+            </div>
+            <div id="sign-modal-content">
+                <p style="text-align: center;">Please provide following information:</p>
+                <form id="signin-form">
+                    <div class="input">
+                        <p>Name</p>
+                        <input name="name" type="text">
+                    </div>
+                    <div class="input">
+                        <p>Password</p>
+                        <input name="password" type="password">
+                    </div>
+                    <div class="input">
+                        <p>E-mail</p>
+                        <input name="email" type="email" id ="sign-in-email">
+                    </div>
+                    <div class="input">
+                        <p>Confirm E-mail</p>
+                        <input name="email" type="email" id = "confirm-email">
+                    </div>
+                    <div class="signin">
+                        <input class="login-btn" type="submit" value="Submit">
+                    </div>
+                </form>
             </div>
         </div>
     </main>
