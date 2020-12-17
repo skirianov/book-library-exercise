@@ -1,24 +1,57 @@
 const signInEmailPassword = document.querySelector('#signin-form');
 const loginForm = document.querySelector('#login-form');
+const submit = document.querySelector('#submit');
+const modal = document.querySelector('#modal-login');
+const signIn = document.querySelector('#modal-signin');
+const page = document.querySelector('.page');
+const signModal = document.querySelector('#sign-modal-content');
 
 
-signInEmailPassword.addEventListener('submit',(e) => {
-    e.preventDefault();
+const signInBtn = document.querySelector('#sign-in-btn');
 
-    const name = signInEmailPassword["name"].value;
-    const password = signInEmailPassword["password"].value;
-    const email = signInEmailPassword["email"].value;
-
-    auth.createUserWithEmailAndPassword(email, password).then(cred => {
-        console.log(cred);
-    });
-
-        signInEmailPassword["email"].value = '';
-        signInEmailPassword["password"].value = '';
-        signInEmailPassword["name"].value = '';
-        hideSignInModal();
+signInBtn.addEventListener('click', (e) => {
+    signIn.style.display = "block";
+    page.style.filter = "blur(2px)";
 });
 
+signModal.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+    return false;
+})
+
+signIn.addEventListener('click',() => {hideSignInModal()});
+
+const hideSignInModal = function(){
+    signIn.style.display = "none";
+    page.style.filter = "none";
+}
+
+
+submit.addEventListener('click',(e) => {
+
+    e.preventDefault();
+
+    let password = signInEmailPassword["password"].value;
+    let email = signInEmailPassword["email"][0].value;
+
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(cred => {
+        signInEmailPassword["email"][0].value = '';
+        signInEmailPassword["password"].value = '';
+        signInEmailPassword["name"].value = '';
+        alert('You have succesfully registered! Now you can log in.')
+        hideSignInModal();
+    })
+    .catch ((error) =>{
+        console.log(error);
+    })
+
+        
+})
+
+
+// Login process
 const login = document.querySelector('#login');
 
 login.addEventListener('click', (e) => {
@@ -34,7 +67,7 @@ login.addEventListener('click', (e) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
   .then((user) => {
     loggedInMainPage();
-    console.log(user);
+    return user;
   })
   .catch((error) => {
     var errorCode = error.code;
@@ -44,6 +77,5 @@ login.addEventListener('click', (e) => {
 
 
 const loggedInMainPage = function() {
-    window.location.href = "http://localhost:5000/main.html";
+    window.location.href = "https://libtrack-5215d.web.app/main.html";
 }
-
