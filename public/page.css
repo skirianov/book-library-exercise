@@ -3,8 +3,13 @@
     padding: 0;
     box-sizing: border-box;
     overflow-x:hidden;
+    font-family: sans-serif;
+    color:rgba(19, 19, 19, 0.808)
 }
 
+.page {
+    
+}
 .header {
     width: 100%;
     height: 130px;
@@ -51,4 +56,167 @@
 }
 .user {
     width: 25%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.user-label {
+    margin: 10px;
+    width: 100%;
+}
+
+#add-book-btn {
+    width: 100px;
+    height: 30px;
+}
+
+.container {
+    overflow-x:hidden;
+    width: 100%;
+    height: 100%;   
+    margin: auto;
+}
+
+.book-cards {
+    height: 100%;
+    margin-top: 20px;
+    margin-left: 240px;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 20%;
+    margin: 20px;
+    border: 1px solid rgba(182, 182, 182, 0.144);
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px rgba(182, 182, 182, 0.281), 0px 0px 6px rgba(182, 182, 182, 0.151);
+    background-color: white;
+}
+
+.book-head {
+    height: 100px;
+}
+
+.head-text {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 10px;
+}
+
+.head-text-small {
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.book-main {
+    width: 100%;
+    height: 250px;
+    margin-left: 70px;
+    
+}
+
+.book-img {
+    width: 180px;
+    height: 180px;
+}
+
+.book-foot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.foot-text {
+    font-size: 1.1em;
+}
+
+.btn {
+    padding: 10px;
+    color: #ffffff;
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center;
+    margin: 6px;
+}
+
+.delete {
+    background-color: red;
+}
+
+.fav {
+    background-color: rgb(71, 177, 212);
+}
+
+.status {
+    background-color: green;
+}
+
+/* Modal styles */
+
+.modal-book {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.mod-container {
+    position: absolute;
+    display: flex;
+    left: 35%;
+    top: 20%;
+    background-color: #ffffff;
+    width: 25%;
+    height: 60%;
+    border: 1px solid rgba(0, 0, 0, 0.089);
+    box-shadow: 0px 0px 4px rgba(182, 182, 182, 0.281), 0px 0px 6px rgba(182, 182, 182, 0.151);
+
+}
+
+.add-book {
+    margin: auto;
+}
+
+.text {
+    height: 80px;
+}
+
+.labels {
+    height: 20px;
+    font-size: 1em;
+}
+
+.input-book {
+    width: 300px;
+    height: 40px;
+    border: 0;
+    background-color: rgba(182, 182, 182, 0.281);
+    padding: 4px;
+}
+
+.input-book:focus {
+    outline: 0;
+}
+
+.form {
+    display: flex;
+}
+.button {
+    margin: auto;
+    width: 40%;
+    height: 40px;
+    background-color: green;    
+    border: 0;
+    color: #ffffff;
+    font-size: 1.2em;
 }
