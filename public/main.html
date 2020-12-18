@@ -27,46 +27,8 @@
 <main>
     <div class="container">
         <div class="book-cards">
-            <div class="book">
-                <div class="book-head">
-                    <p class="head-text">#book-name</p>
-                    <p class="head-text-small">pages</p>
-                </div>
-                <div class="book-main">
-                    <img class="book-img" src="imgs/book.png" alt="book-img">
-                </div>
-                <div class="book-foot">
-                    <div class="delete btn">
-                        <p class="foot-text">Delete</p>
-                    </div>
-                    <div class="fav btn">
-                        <p class="foot-text">Favourite</p>
-                    </div>
-                    <div class="status btn">
-                        <p class="foot-text">Read</p>
-                    </div>
-                </div>
-            </div>
-            <div class="book">
-                <div class="book-head">
-                    <p class="head-text">#book-name</p>
-                    <p class="head-text-small">pages</p>
-                </div>
-                <div class="book-main">
-                    <img class="book-img" src="imgs/book.png" alt="book-img">
-                </div>
-                <div class="book-foot">
-                    <div class="delete btn">
-                        <p class="foot-text">Delete</p>
-                    </div>
-                    <div class="fav btn">
-                        <p class="foot-text">Favourite</p>
-                    </div>
-                    <div class="status btn">
-                        <p class="foot-text">Read</p>
-                    </div>
-                </div>
-            </div>
+            
+            
         </div>
     </div>
 </main>
@@ -109,9 +71,13 @@
     <script src="/__/firebase/8.1.2/firebase-firestore.js"></script>
 
     <!-- Previously loaded Firebase SDKs -->
+    
 
     <!-- Initialize Firebase -->
-    <script src="/__/firebase/init.js"></script>
+    <script src="/__/firebase/init.js">
+    const firebase = require("firebase");
+// Required for side-effects
+require("firebase/firestore");</script>
     <script>
 
         // make auth and db ref

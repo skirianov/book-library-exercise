@@ -5,29 +5,29 @@ const addBookModal = document.querySelector('.modal-book');
 const addBookButton = document.querySelector('#add-book-btn');
 const page = document.querySelector('.page');
 const bookCardList = document.querySelector('.book-cards');
+let bookTitle,bookPages;
 let bookCard = document.querySelectorAll('.book');
+let size = 0;
+db.collection('books').get().then(snap => {
+    size = snap.size // will return the collection size
+});
 
-let bookArr = [{
-    title: "Преступление и наказание",
-    author: "Достоевский",
-    pages: 300,
-    read: "Yes"    
-    },
-    {
-    title: "The fall of moondust",
-    author: "A. Clark",
-    pages: 100,
-    read: "Yes"    
-    }
-];
 
-for (let i = 0; i < bookArr.length; i++){
+let bookArr = [];
+
+function onload(){
+    for (let i = 0; i < size; i++){
+        bookListAppend();
+    };
     
-    let bookTitle = document.querySelectorAll('.head-text');
-    let bookPages = document.querySelectorAll('.head-text-small');
-    bookTitle[i].textContent = bookArr[i].title;
-    bookPages[i].textContent = bookArr[i].pages + ' pages';
-};
+    bookTitle = document.querySelectorAll('.head-text');
+    bookPages = document.querySelectorAll('.head-text-small');
+    
+}
+
+
+onload();
+updateBooks();
 
 const addBookForm = document.querySelector('.add-book');
 const submit = document.querySelector('.button');
@@ -44,13 +44,7 @@ submit.addEventListener('click',() => {
     clearBookEntry();
     bookListAppend();
     hideSignInModal();
-    for (let i = 0; i < bookArr.length; i++){
-    
-        let bookTitle = document.querySelectorAll('.head-text');
-        let bookPages = document.querySelectorAll('.head-text-small');
-        bookTitle[i].textContent = bookArr[i].title;
-        bookPages[i].textContent = bookArr[i].pages + ' pages';
-    };
+    updateBooks();
     
 });
 
@@ -125,3 +119,43 @@ modal.addEventListener('click', (e) => {
     e.stopImmediatePropagation();
     return false;
 });
+
+
+
+function updateBooks() {
+    for (let i = 0; i < size; i++){
+        var docRef = db.collection("books").doc("book" + i);
+
+        docRef.get().then(function(doc) {
+            if (doc.exists) {
+                console.log("Document data:", doc.data());
+                bookArr.push(doc.data());
+                
+                bookTitle[i].textContent = bookArr[i].title;
+                bookPages[i].textContent = bookArr[i].pages + ' pages';
+            } else {
+                // doc.data() will be undefined in this case
+                console.log("No such document!");
+            }
+        }).catch(function(error) {
+            console.log("Error getting document:", error);
+        });
+        
+       
+    };
+};
+
+/*
+db.collection("books").doc('book' + i.toString()).set({
+    title: bookArr[i].title,
+    author: bookArr[i].author,
+    pages: bookArr[i].pages,
+    read: bookArr[i].read,
+})
+.then(function() {
+    console.log("Document successfully written!");
+})
+.catch(function(error) {
+    console.error("Error writing document: ", error);
+});
+*/
